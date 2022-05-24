@@ -11,10 +11,13 @@
     <div class="container">
         <p>현재 보유 금액</p>
         <label for="charge"></label>
-        <form action="post">
+        <form name="start_form" action="post">
             <label for="betting">배팅 금액 : </label>
-            <input type="text">
-            <button id="btn-GameStart" onclick="location.href='gameBoard.html'">Game Start!</button>
+            <input id="bettingCost" type="text" value="" required> 
+            <button id="btn-GameStart" 
+                    onclick="start()">Game Start!</button>
+                    
+            
         </form>
     </div>
     <script src="js/index.js"></script>

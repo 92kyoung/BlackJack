@@ -1,6 +1,12 @@
+import index from "js/index.js";
+
 function init(){
     // 배팅 금액 값 가져오기
-    getBettingCost()
+    index.setup(document.getElementById('bettingCost'));
+
+    getBettingCost(){
+        
+    }
     // deck 섞기
     shuffle();
     // 카드 2장씩 나눠주기
