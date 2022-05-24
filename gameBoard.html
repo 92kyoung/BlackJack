@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/gameBoard_style.css">
+</head>
+<body>
+    <div id="dillerCards"></div>
+    <div id="userCards"></div>
+    <div class="setOfButton">
+        <button onclick="surrender()">Surrender</button>
+        <button onclick="hit()">hit</button>
+        <button onclick="stand()">stand</button>
+    </div>
+    <div id="backgroud">
+        <div id="popup">
+            <img id="outcome">
+            <div id="setOfButton">
+                <button id="btn-restart" onclick="restart()">Restart</button>
+                <button id="btn-endGame" onclick="endGame()">End Game</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/gameBoard.js"></script>
+</body>
+</html>
