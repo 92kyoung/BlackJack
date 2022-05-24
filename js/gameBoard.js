@@ -18,10 +18,24 @@ function init(){
     displayDillerCard();
 }
 
+const userCard = [];  //유저 보유 카드
+const dillerCard = []; //딜러 보유 카드
 
 function hit() {
+    const deck= makeCard();
     // deck에서 카드 한장씩 딜러 유저 나눠주기
-        // diller의 카드 합이 17미만이면 카드 한장 더 주기
+    const num=Math.floor(Math.random()*52);
+    userCard.push(deck[num]);
+    //console.log(userCard);
+    deck.splice(num,1); //카드가 유저에게 부여되고 나면 해당 카드는 카드 전체 목록에서 삭제
+    //console.log(deck);
+    // diller의 카드 합이 17미만이면 카드 한장 더 주기
+    // if(dillerCard_sum<17){
+    //     dillerCard.push(deck[num]);
+    // }
+    //dillerGetCard();
+    // 나눠준 카드 보여주기
+    // diller의 카드 합이 17미만이면 카드 한장 더 주기
     dillerGetCard();
     // 나눠준 카드 보여주기
 }
