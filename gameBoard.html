@@ -9,18 +9,22 @@
     <link rel="stylesheet" href="css/gameBoard_style.css">
 </head>
 <body>
-    <div id="dillerCards"></div>
-    <div id="userCards"></div>
-    <div class="setOfButton">
-        <button id="btn-hit">hit</button>
-        <button id="btn-stand">stand</button>
-    </div>
-    <div id="backgroud">
-        <div id="popup">
-            <img id="outcome">
-            <div id="setOfButton">
-                <button id="btn-restart" onclick="restart()">Restart</button>
-                <button id="btn-endGame" onclick="endGame()">End Game</button>
+    <div id="main">
+        <div id="gameboard">
+            <div id="dillerCards"></div>
+            <div class="setOfButton">
+                <button id="btn-hit" class="btn">hit</button>
+                <button id="btn-stand" class="btn">stand</button>
+            </div>
+            <div id="userCards"></div>
+        </div>
+        <div id="backgroud">
+            <div id="popup">
+                <img id="outcome">
+                <div id="setOfButton">
+                    <button id="btn-restart" class="btn" onclick="restart()">Restart</button>
+                    <button id="btn-endGame" class="btn" onclick="endGame()">End Game</button>
+                </div>
             </div>
         </div>
     </div>
