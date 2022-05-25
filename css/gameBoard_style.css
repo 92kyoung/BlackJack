@@ -11,8 +11,7 @@ html, body{
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
-    width: 100vw;
-    height: 500vh;
+    width: 100%;
 }
 
 #backgroud {
@@ -30,6 +29,9 @@ html, body{
 #dillerCards {
     padding: 100px;   
 }
+#userCards {
+    padding: 100px;   
+}
 .setOfButton {
     margin-top: 100px;
     
@@ -42,6 +44,9 @@ html, body{
     border-radius: 20px;
     font-size: 17px;
     font-weight: bold;
+    margin: 30px;
+    width: 150px;
+    height: 50px;
 }
 
 .card {

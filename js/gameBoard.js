@@ -25,8 +25,8 @@ export default class GameBoard {
         this.user.addCard(popDeck);
         
         if(true) {
-        const popDeck2 = this.deck.popCard();
-        this.dealer.addCard(popDeck2);
+            const popDeck2 = this.deck.popCard();
+            this.dealer.addCard(popDeck2);
         }
         console.log(this.deck.deck.length);
         alert("tests~!!");
