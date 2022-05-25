@@ -19,14 +19,22 @@ html, body{
     display: none;
 }
 
-.btn {
+.setOfButton, #dillerCards, #userCards {
     /* body에서 X축의 가운데로 이동 */
     position: relative;
     width: 50%;
     left: 50%;
     transform:translateX(-50%);
     text-align: center; 
-
+}
+#dillerCards {
+    padding: 100px;   
+}
+.setOfButton {
+    margin-top: 100px;
+    
+}
+.btn {
     /* 버튼 모양 생성 */
     background-color: pink;
     border: 2px solid beige;
@@ -34,4 +42,12 @@ html, body{
     border-radius: 20px;
     font-size: 17px;
     font-weight: bold;
+}
+
+.card {
+    height: 250px;
+}
+
+img {
+    padding: 30px;
 }
