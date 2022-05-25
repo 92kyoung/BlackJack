@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
     <title>Document</title>
     <link rel="stylesheet" href="css/gameBoard_style.css">
 </head>
@@ -11,9 +12,8 @@
     <div id="dillerCards"></div>
     <div id="userCards"></div>
     <div class="setOfButton">
-        <button onclick="surrender()">Surrender</button>
-        <button onclick="hit()">hit</button>
-        <button onclick="stand()">stand</button>
+        <button id="btn-hit">hit</button>
+        <button id="btn-stand">stand</button>
     </div>
     <div id="backgroud">
         <div id="popup">
@@ -24,6 +24,6 @@
             </div>
         </div>
     </div>
-    <script src="js/gameBoard.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ export default class Deck {
     }
 
     popCard(){
-        // 한장씩 꺼내기
+        
     }
 
     shuffle(){

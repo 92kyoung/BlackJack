@@ -6,7 +6,6 @@ const deck = new Deck();
 const dealer = new Dealer();
 const user = new User();
 
-
 function init(){
     // deck 섞기
     deck.shuffle();
@@ -58,7 +57,7 @@ function surrender() {
     // index.html로 이동
 }
 
-function cardValueCalculation(card) {
+function cardValueCalculation() {
     // card score <= 21 인지 아닌지 계산
     // 스페이드 A일 경우 1일때와 11일 때를 동시에 계산하여 둘 중 21을 넘지 않으면서 가장 큰 값을 리턴 할 것
     // card : 사용자가 현재 보유중인 카드
@@ -74,6 +73,6 @@ function cardValueCalculation(card) {
             score += parseInt(userCard[i][0]);
         }
     }
-    
+    return score;
     
 }
