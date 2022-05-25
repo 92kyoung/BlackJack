@@ -43,23 +43,16 @@ export default class GameBoard {
 
     cardValueCalculation() {
         let score = 0;
-        const cards = ['HA', 'S5'];
-        const scoreCards = [];
-
-        for(let i = 0; i < cards.length; i++){
-            let temp = cards[i].split('');
-            scoreCards.push(temp[1]);    
-        }
-        console.log(scoreCards);
+        const cards = this.user.getCard();
         
-        for(let i = 0; i < scoreCards.length; i++){
-            if(scoreCards[i] === '10' || scoreCards[i] === 'J' || scoreCards[i] === 'Q' || scoreCards[i] === 'K'){
+        for(let i = 0; i < cards.length; i++){
+            if(cards[i][1] === '10' || cards[i][1] === 'jack' || cards[i][1] === 'queen' || cards[i][1] === 'king'){
                 score += 10;
-            } else if(scoreCards[i] === 'A'){
+            } else if(cards[i][1] === 'ace'){
                 if(score + 11 > 21) score += 1;
                 else score += 11;
             } else{
-                score += parseInt(scoreCards[i]);
+                score += parseInt(cards[i][1]);
             }
         }
         return score;
