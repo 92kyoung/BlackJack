@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     game = new GameBoard();
     game.init();
     game.hit();
-    game.hit();
-    game.hit();
-    console.log(game.cardValueCalculation());
 
+    console.log(game.cardValueCalculation());
 });
 
 const btnHit = document.querySelector("#btn-hit");
