@@ -5,8 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     game = new GameBoard();
     game.init();
     game.hit();
+<<<<<<< Updated upstream
     console.log(game.cardValueCalculation());
 
+=======
+    game.hit();
+>>>>>>> Stashed changes
 });
 
 const btnHit = document.querySelector("#btn-hit");
