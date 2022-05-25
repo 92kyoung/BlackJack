@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     game = new GameBoard();
     game.init();
     game.hit();
+
 });
 
 const btnHit = document.querySelector("#btn-hit");

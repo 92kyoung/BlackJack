@@ -28,9 +28,10 @@ export default class GameBoard {
             const popDeck2 = this.deck.popCard();
             this.dealer.addCard(popDeck2);
         }
-        console.log(this.deck.deck.length);
+        //console.log(this.deck.deck.length);
         console.log(this.user.cards);
-        // alert("tests~!!");
+        alert("tests~!!");
+
     }
 
     stand() {
@@ -46,4 +47,13 @@ export default class GameBoard {
         // 에이일 경우 11일 때와 1일 때를 동시에 계산하여
         // 둘 중 21을 넘지 않으면서 가장 큰 값을 리턴 할 것
     }
+
+    showCard(){
+        //유저 카드를 이미지 
+        for(let i=0; i<this.user.cards.length; i++){
+            const doc = document.getElementById('dillercard');
+            doc.innerHTML=`<img class="card" src="./img/${deck.cardValue}_of_clubs.png" alt=""></img>`;   
+        }
+    }
 }
+

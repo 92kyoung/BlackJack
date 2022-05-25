@@ -12,13 +12,13 @@ export default class Deck {
 
         switch(Math.floor(card/13)){
             case 0:
-                cardShape='S';
+                cardShape='spades';
             case 1:
-                cardShape='H';
+                cardShape='hearts';
             case 2:
-                cardShape='D';
+                cardShape='diamond';
             case 3:
-                cardShape='C';
+                cardShape='clubs';
         }
 
         switch(card % 13){
@@ -101,3 +101,4 @@ function getRandomNum(maxNum) {
     // 0 ~ maxNum까지에서 random 값 반환
     return Math.floor(Math.random() * maxNum);
 }
+
