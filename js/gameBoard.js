@@ -1,14 +1,15 @@
-import index from "js/index.js";
+import Deck from "./models/Deck.js";
+import Dealer from "./models/Dealer.js";
+import User from "./models/User.js";
+
+const deck = new Deck();
+const dealer = new Dealer();
+const user = new User();
+
 
 function init(){
-    // 배팅 금액 값 가져오기
-    index.setup(document.getElementById('bettingCost'));
-
-    // getBettingCost(){
-        
-    // }
     // deck 섞기
-    shuffle();
+    deck.shuffle();
     // 카드 2장씩 나눠주기
     hit();
     hit();
@@ -22,6 +23,7 @@ const userCard = [];  //유저 보유 카드
 const dillerCard = []; //딜러 보유 카드
 
 function hit() {
+    console.log("hit()");
     const deck= makeCard();
     // deck에서 카드 한장씩 딜러 유저 나눠주기
     const num=Math.floor(Math.random()*52);
@@ -54,4 +56,8 @@ function stand() {
 function surrender() {
     // 절반으로 삭감하고
     // index.html로 이동
+}
+
+function cardValueCalculation() {
+
 }

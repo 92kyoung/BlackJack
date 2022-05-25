@@ -6,6 +6,10 @@ export default class Deck {
         this.deck = createCrads();
     }
 
+    popCard(){
+        // 한장씩 꺼내기
+    }
+
     shuffle(){
         let tmpDeck = [];
         while (this.deck.length > 0) {
