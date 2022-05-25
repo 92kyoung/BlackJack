@@ -58,6 +58,22 @@ function surrender() {
     // index.html로 이동
 }
 
-function cardValueCalculation() {
-
+function cardValueCalculation(card) {
+    // card score <= 21 인지 아닌지 계산
+    // 스페이드 A일 경우 1일때와 11일 때를 동시에 계산하여 둘 중 21을 넘지 않으면서 가장 큰 값을 리턴 할 것
+    // card : 사용자가 현재 보유중인 카드
+    let score;
+    
+    for(let i = 0; i < userCard.length; i++){
+        if(userCard[i][0] === '10' || userCard[i][0] === 'J' || userCard[i][0] === 'Q' || userCard[i][0] === 'K'){
+            score += 10;
+        } else if(userCard[i][0] === 'A'){
+            if(score + 11 > 21) score += 1;
+            else score += 11;
+        } else{
+            score += parseInt(userCard[i][0]);
+        }
+    }
+    
+    
 }
