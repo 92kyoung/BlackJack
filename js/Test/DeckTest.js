@@ -1,4 +1,4 @@
-import Deck from "./deck.js";
+import Deck from "../models/Deck.js";
 
 const deck1 = new Deck();
 deck1.printDeck();

@@ -3,16 +3,16 @@
 export default class Deck {
 
     constructor(){
-        this.deck = createCrads();
+        this.deck = [];
     }
 
     shuffle(){
-        let tmpDeck = [];
+        let tmpDeck = createCrads();
         while (this.deck.length > 0) {
-            tmpDeck.push(this.deck.splice(getRandomNum(this.deck.length), 1)[0]);
+            this.deck.push(this.tmpDeck.splice(getRandomNum(this.tmpDeck.length), 1)[0]);
         }
     
-        this.deck = tmpDeck;
+        this.deck;
     }
 
     printDeck(){
