@@ -21,6 +21,14 @@ export default class GameBoard {
     }
 
     hit(){
+        const popDeck = this.deck.popCard();
+        this.user.addCard(popDeck);
+        
+        if(true) {
+        const popDeck2 = this.deck.popCard();
+        this.dealer.addCard(popDeck2);
+        }
+        console.log(this.deck.deck.length);
         alert("tests~!!");
     }
 

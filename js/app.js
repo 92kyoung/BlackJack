@@ -3,6 +3,7 @@ import GameBoard from "./gameBoard.js";
 let game;
 document.addEventListener("DOMContentLoaded", () => {
     game = new GameBoard();
+    game.hit();
 });
 
 const btnHit = document.querySelector("#btn-hit");
