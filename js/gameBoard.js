@@ -42,10 +42,27 @@ export default class GameBoard {
     }
 
     cardValueCalculation() {
-        // 정빈이 여기!
-        // 카드 점수가 21점 이하인지 계산하기
-        // 에이일 경우 11일 때와 1일 때를 동시에 계산하여
-        // 둘 중 21을 넘지 않으면서 가장 큰 값을 리턴 할 것
+        let score = 0;
+        const cards = ['HA', 'S5'];
+        const scoreCards = [];
+
+        for(let i = 0; i < cards.length; i++){
+            let temp = cards[i].split('');
+            scoreCards.push(temp[1]);    
+        }
+        console.log(scoreCards);
+        
+        for(let i = 0; i < scoreCards.length; i++){
+            if(scoreCards[i] === '10' || scoreCards[i] === 'J' || scoreCards[i] === 'Q' || scoreCards[i] === 'K'){
+                score += 10;
+            } else if(scoreCards[i] === 'A'){
+                if(score + 11 > 21) score += 1;
+                else score += 11;
+            } else{
+                score += parseInt(scoreCards[i]);
+            }
+        }
+        return score;
     }
 
     showCard(){

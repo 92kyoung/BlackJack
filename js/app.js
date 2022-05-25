@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     game = new GameBoard();
     game.init();
     game.hit();
+    console.log(game.cardValueCalculation());
 
 });
 
