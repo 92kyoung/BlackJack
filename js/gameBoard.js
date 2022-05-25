@@ -20,7 +20,7 @@ export default class GameBoard {
         const popDeck = this.deck.popCard();
         this.user.addCard(popDeck);
         
-        if(this.cardValueCalculation(this.dealer)) {
+        if(this.cardValueCalculation(this.dealer) < 17) {
             const popDeck2 = this.deck.popCard();
             this.dealer.addCard(popDeck2);
         }
@@ -90,11 +90,21 @@ export default class GameBoard {
     }
 
     showCard(){
-        //유저 카드를 이미지 
+        //유저 이미지 보여줌
+        const userdoc = document.getElementById('userCards');
+        userdoc.innerHTML = "";
         for(let i=0; i<this.user.cards.length; i++){
-            const doc = document.getElementById('dillercard');
-            doc.innerHTML=`<img class="card" src="./img/${deck.cardValue}_of_clubs.png" alt=""></img>`;   
+            userdoc.innerHTML +=`<img class="card" src="./img/${this.user.cards[i][1]}_of_${this.user.cards[i][0]}.png" alt=""></img>`;   
+            //doc.innerHTML= `<img class="card" src="./img/10_of_clubs.png" alt=""></img>`;
         }
+
+        const dealerdoc = document.getElementById('dealerCards');
+        dealerdoc.innerHTML = "";
+        for(let i=0; i<this.dealer.cards.length; i++){
+            dealerdoc.innerHTML +=`<img class="card" src="./img/${this.dealer.cards[i][1]}_of_${this.dealer.cards[i][0]}.png" alt=""></img>`;   
+            //doc.innerHTML= `<img class="card" src="./img/10_of_clubs.png" alt=""></img>`;
+        }
+    
     }
 }
 
