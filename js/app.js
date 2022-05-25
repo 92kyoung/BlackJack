@@ -3,6 +3,7 @@ import GameBoard from "./gameBoard.js";
 let game;
 document.addEventListener("DOMContentLoaded", () => {
     game = new GameBoard();
+    game.init();
     game.hit();
 });
 

@@ -7,10 +7,10 @@ export default class Deck {
     }
 
     cardValue(card){
-        const cardShape='';
-        const cardValue='';
+        let cardShape;
+        let cardValue;
 
-        switch(card/13){
+        switch(Math.floor(card/13)){
             case 0:
                 cardShape='S';
             case 1:
@@ -23,10 +23,10 @@ export default class Deck {
 
         switch(card % 13){
             case 0:
-                cardValue='K';
+                cardValue='king';
                 break;
             case 1:
-                cardValue='1';
+                cardValue='ace';
                 break;
             case 2:
                 cardValue='2';
@@ -56,22 +56,22 @@ export default class Deck {
                 cardValue='10';
                 break;
             case 11:
-                cardValue='J';
+                cardValue='jack';
                 break;
             case 12:
-                cardValue='Q';
+                cardValue='queen';
                 break;
             }
 
-            const cardTest = [];
-            cardTest.push(cardShape,cardValue); 
-            return cardTest;   
+            const oneCard = [];
+            oneCard.push(cardShape,cardValue); 
+            return oneCard;   
     }
 
     popCard(){
         // 한장씩 꺼내기
         const poppedCard =this.deck.pop();
-        return poppedCard;
+        return this.cardValue(poppedCard);
     }
 
     shuffle(){

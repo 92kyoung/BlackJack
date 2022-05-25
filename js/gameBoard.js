@@ -29,7 +29,8 @@ export default class GameBoard {
             this.dealer.addCard(popDeck2);
         }
         console.log(this.deck.deck.length);
-        alert("tests~!!");
+        console.log(this.user.cards);
+        // alert("tests~!!");
     }
 
     stand() {
