@@ -64,7 +64,7 @@ export default class Deck {
             }
 
             const oneCard = [];
-            oneCard.push([cardShape,cardValue]); 
+            oneCard.push(cardShape,cardValue); 
             return oneCard;   
     }
 

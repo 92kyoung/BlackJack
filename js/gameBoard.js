@@ -12,49 +12,80 @@ export default class GameBoard {
         // deck 섞기
         this.deck.shuffle();
         // 카드 2장씩 나눠주기
-        // hit();
-        // hit();
-        // // 유저 카드는 다 보여주기
-        // displayUserCard();
-        // // 딜러 카드 보여주기
-        // displayDillerCard();
+        this.hit();
+        this.hit();
     }
 
     hit(){
         const popDeck = this.deck.popCard();
         this.user.addCard(popDeck);
         
-        if(true) {
+        if(this.cardValueCalculation(this.dealer)) {
             const popDeck2 = this.deck.popCard();
             this.dealer.addCard(popDeck2);
         }
-        //console.log(this.deck.deck.length);
-        console.log(this.user.cards);
-        alert("tests~!!");
 
+        return(this.isBurst(this.user) || this.isBurst(this.dealer));
     }
 
     stand() {
         console.log("stand()");
-        while(this.cardValueCalculation() <= 21) {
-            dealer.addCard(deck.popCard());
+        while(this.cardValueCalculation(this.dealer) <= 21) {
+            this.dealer.addCard(this.deck.popCard());
         }
     }
 
-    cardValueCalculation() {
-        let score = 0;
-        const cards = this.user.getCard();
+    isBurst(person) {
+        let score = this.cardValueCalculation(person);
         
-        for(let i = 0; i < cards.length; i++){
-            if(cards[i][1] === '10' || cards[i][1] === 'jack' || cards[i][1] === 'queen' || cards[i][1] === 'king'){
-                score += 10;
-            } else if(cards[i][1] === 'ace'){
-                if(score + 11 > 21) score += 1;
-                else score += 11;
-            } else{
-                score += parseInt(cards[i][1]);
+        if(score > 21) {
+            return true;
+        }
+        return false;
+    }
+
+    outcome(){
+        console.log(this.user.getCard());
+        console.log(this.dealer.getCard());
+        console.log(this.cardValueCalculation(this.user));
+        console.log(this.cardValueCalculation(this.dealer));
+
+        if(this.isBurst(this.user) && this.isBurst(this.dealer)) {
+            return 3;
+        }
+        if(this.isBurst(this.user) && !this.isBurst(this.dealer)) {
+            return 2;
+        }
+        if(!this.isBurst(this.user) && this.isBurst(this.dealer)) {
+            return 1;
+        }
+        if(!this.isBurst(this.user) && !this.isBurst(this.dealer)) {
+            if(this.cardValueCalculation(this.user) > this.cardValueCalculation(this.dealer)) {
+                return 1;
+            } else if(this.cardValueCalculation(this.user) === this.cardValueCalculation(this.dealer)) {
+                return 3;
+            } else {
+                return 2;
             }
         }
+
+    }
+
+    cardValueCalculation(person = new User()) {
+        let score = 0;
+        const cards = person.getCard();
+        console.log(cards);
+        for(let i = 0; i < cards.length; i++){
+            if(cards[i][1] === '10' || cards[i][1] === 'jack' || cards[i][1] === 'queen' || cards[i][1] === 'king'){
+                score = score + 10;
+            } else if(cards[i][1] === 'ace'){
+                if(score + 11 > 21) score = score + 1;
+                else score = score + 11;
+            } else{
+                score = score + parseInt(cards[i][1]);
+            }
+        }
+        
         return score;
     }
 
